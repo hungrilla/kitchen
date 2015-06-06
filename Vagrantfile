@@ -14,15 +14,26 @@ Vagrant.configure("2") do |config|
   
   config.vm.hostname = "#{`hostname`[0..-2]}-web"
 
-  config.vm.network :private_network, ip: '192.168.11.1'
+  config.vm.post_up_message = "
+    Welcome to Hungrilla Virtual Environment.
+     This gorilla is hungry for some code!!
+                  
+                    .\"\`\".
+                .-./ _=_ \\.-.
+               {  (,(oYo),) }}
+               {{ |   \"   |} }
+               { { \\(---)/  }}
+               {{  }'-=-'{ } }
+               { { }._:_.{  }}
+               {{  } -:- { } }
+               {_{ }\`===\`{  _}
+              ((((\\)     (/)))) 
+  "
 
   config.vm.network :forwarded_port, guest: 80, host: 2000
+  config.vm.network :forwarded_port, guest: 3000, host: 2010
 
   config.vm.network :forwarded_port, guest: 3306, host: 3307
-
-  
-  #config.vm.forward_port 80, 2000 # nginx
-  #config.vm.forward_port 3306, 3306 # mysql
   
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = ["cookbooks"]
