@@ -1,0 +1,6 @@
+
+# Temporary files directory
+tmp/
+
+# Chef lock file
+Cheffile.lock
