@@ -4,7 +4,7 @@ site 'http://community.opscode.com/api/v1'
 
 cookbook "apt"
 cookbook "vim", {}
-cookbook "nodejs", {:github=>"mdxp/nodejs-cookbook"}
+cookbook "nodejs", {:github=>"redguide/nodejs"}
 cookbook "nginx", {}
 cookbook "git", {}
 cookbook "mysql", {}
